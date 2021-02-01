@@ -1,0 +1,35 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.section {
+    display: flex;
+    padding: 20px;
+}
+
+.section--image {
+    background: brown;
+}
+
+.section--javascript {
+    background: goldenrod;
+}
+
+.section--api {
+    background: deepskyblue;
+}
+
+.section__title {
+    width: 250px;
+    color: white;
+}
+
+.section__content {
+    display: flex;
+}
+
+.section__image {
+    margin-right: 10px;
+    width: 250px;
+}

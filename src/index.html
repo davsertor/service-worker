@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/functions.js"></script>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Service worker example!</h1>
+
+        <div class="section section--image">
+            <div class="section__title">
+                Image
+            </div>
+            <div class="section__content">
+                <img class="section__image" src="assets/local-image.jpeg" />
+            </div>
+        </div>
+
+        <div class="section section--javascript">
+            <div class="section__title">
+                Javascript
+            </div>
+            <div class="section__content">
+                <button onclick="myNumber()">my number</button>
+                <span id="my-number"></span>
+            </div>
+        </div>
+
+        <div class="section section--api">
+            <div class="section__title">
+                API
+            </div>
+            <div class="section__content">
+                <button onclick="callApi()">call api</button>
+                <span id="call-api"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>
